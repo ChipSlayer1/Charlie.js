@@ -38,7 +38,14 @@ function Button(label, x, y, rad, width, height, draw, change, func, font, col1,
 	
 	// mouseOver function
 	this.mouseOver = function() {
-		if(
+		// rect stuff
+		if(this.rad == null || this.rad == undefined) {
+			if(mouseX >= this.x - this.w/2 && mouseX <= this.x + this.w/2 && mouseY >= this.y - this.h/2 && mouseY <= this.y + this.h/2) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 	};
 }
 
