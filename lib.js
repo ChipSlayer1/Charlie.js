@@ -15,6 +15,12 @@ function __init__(w, h, node) {
 	node.body.appendChild(canvas);
 }
 
+// update mouse positions
+window.addEventListener("mousemove", function(event) {
+	mouseX = event.pageX;
+	mouseY = event.pageY;
+});
+
 // button class
 function Button(label, x, y, rad, width, height, draw, change, func, font, col1, col2) {
 	this.l = label;
@@ -31,7 +37,9 @@ function Button(label, x, y, rad, width, height, draw, change, func, font, col1,
 	this.c2 = col2;
 	
 	// mouseOver function
-	
+	this.mouseOver = function() {
+		if(
+	};
 }
 
 // detect mouse clicks
