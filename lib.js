@@ -5,6 +5,7 @@ var width;
 var height;
 var mouseX;
 var mouseY;
+var scene;
 
 // initiate canvas stuff
 function __init__(w, h, node) {
@@ -27,7 +28,11 @@ function Button(label, x, y, rad, width, height, draw, change, func, font, col1,
 	this.x = x;
 	this.y = y;
 	this.r = r;
+	this.maxR = this.r + 5;
+	this.recR = this.r;
 	this.w = w;
+	this.maxW = this.w + 5;
+	this.recW = this.w;
 	this.h = h;
 	this.d = d;
 	this.c = c;
@@ -39,12 +44,25 @@ function Button(label, x, y, rad, width, height, draw, change, func, font, col1,
 	// mouseOver function
 	this.mouseOver = function() {
 		// rect stuff
-		if(this.rad == null || this.rad == undefined) {
+		if(this.r == null || this.r == undefined) {
 			if(mouseX >= this.x - this.w/2 && mouseX <= this.x + this.w/2 && mouseY >= this.y - this.h/2 && mouseY <= this.y + this.h/2) {
 				return true;
 			} else {
 				return false;
 			}
+		} else {
+			if(Math.sqrt((this.x - mouseX) * (this.x - mouseX) + (this.y - mouseY) * (this.y - mouseY)) <= this.r) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	};
+	
+	// button visuals
+	this.render = function() {
+		if(this.r !== null && this.r !== undefined) {
+			if(
 		}
 	};
 }
@@ -54,4 +72,8 @@ function listen_for_click(func) {
 	window.addEventListener("click", function() {
 		func();
 	});
+}
+
+function animate() {
+	window.requestAnimationFrame(animate);
 }
