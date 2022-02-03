@@ -18,8 +18,14 @@ function __init__(w, h, node) {
 
 // update mouse positions
 window.addEventListener("mousemove", function(event) {
-	mouseX = event.pageX;
-	mouseY = event.pageY;
+	var bounds = canvas.getBoundingClientRect();
+	mouseX = event.x - bounds.left - scrollX;
+	mouseY = event.y - bounds.top;
+	mouseX /= bounds.width;
+	mouseY /= bounds.height;
+	mouseX *= width;
+	mouseY *= height;
+	console.log(mouseX, mouseY);
 });
 
 // button class
