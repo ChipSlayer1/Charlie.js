@@ -62,7 +62,9 @@ function Button(label, x, y, rad, width, height, draw, change, func, font, col1,
 	// button visuals
 	this.render = function() {
 		if(this.r !== null && this.r !== undefined) {
-			if(
+			if(this.d == scene || scene == undefined) {
+				
+			}
 		}
 	};
 }
