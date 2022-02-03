@@ -13,7 +13,7 @@ function __init__(w, h, node) {
 	ctx = canvas.getContext("2d");
 	width = canvas.width = w;
 	height = canvas.height = h;
-	node.body.appendChild(canvas);
+	document.node.appendChild(canvas);
 }
 
 // update mouse positions
