@@ -18,13 +18,16 @@ function __init__(w, h, node) {
 
 // update mouse positions
 window.addEventListener("mousemove", function(event) {
-	var bounds = canvas.getBoundingClientRect();
+	/*var bounds = canvas.getBoundingClientRect();
 	mouseX = event.x - bounds.left - scrollX;
 	mouseY = event.y - bounds.top;
 	mouseX /= bounds.width;
 	mouseY /= bounds.height;
 	mouseX *= width;
-	mouseY *= height;
+	mouseY *= height;*/
+	
+	mouseX = event.x;
+	mouseY = event.y;
 	console.log(mouseX, mouseY);
 });
 
