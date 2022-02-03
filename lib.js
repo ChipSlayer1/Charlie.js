@@ -8,12 +8,12 @@ var mouseY;
 var scene;
 
 // initiate canvas stuff
-function __init__(w, h, node) {
+function __init__(w, h, el) {
     canvas = document.createElement("canvas");
 	ctx = canvas.getContext("2d");
 	width = canvas.width = w;
 	height = canvas.height = h;
-	document.node.appendChild(canvas);
+	document. + el + .appendChild(canvas);
 }
 
 // update mouse positions
