@@ -78,14 +78,26 @@ function Button(label, x, y, rad, width, height, draw, change, func, font, col1,
 					ctx.fillStyle = this.c1;
 					ctx.font = this.font;
 					ctx.textAlign = "center";
-					ctx.textLinebase = "middle";
+					ctx.textBaseLine = "middle";
+					ctx.fillText(this.l, this.x, this.y, this.w - 2);
 					
 				} else{
+					ctx.beginPath();
 					ctx.fillStyle = this.c1;
 					ctx.strokeStyle = this.c2;
-					if(this.r > this.recR) {
-						this.r--;
+					if(this.r < this.maxR) {
+						this.r++;
 					}
+					
+					// button body
+					ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+					ctx.fill();
+					ctx.arc();
+					ctx.fillStyle = this.c2;
+					ctx.font = this.font;
+					ctx.textAlign = "center";
+					ctx.textBaseLine = "middle";
+					ctx.fillText(this.l, this.x, this.y, this.w - 2);
 				}
 			}
 		}
